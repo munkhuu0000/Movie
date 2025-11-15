@@ -1,10 +1,5 @@
 "use client";
 
-import { Input } from "@/components/ui/input";
-import { IoIosSearch } from "react-icons/io";
-import { FaChevronDown } from "react-icons/fa";
-import { LuMoon } from "react-icons/lu";
-
 export const Header = () => {
   return (
     <div className="w-screen h-[59px] flex flex-row justify-around items-center px-4">
@@ -28,7 +23,3 @@ export const Header = () => {
     </div>
   );
 };
-
-{
-  /* <IoIosSearch />; */
-}

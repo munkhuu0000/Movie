@@ -7,7 +7,7 @@ import { LuMoon } from "react-icons/lu";
 
 export const Header = () => {
   return (
-    <div className="w-screen h-[59px] flex flex-row justify-around items-center px-4">
+    <div className="w-screen h-[59px] flex flex-row justify-around items-center px-4 fixed z-2">
       <div className="w-[92px] h-fit gap-2 flex flex-row items-center">
         <img src="header\film.png" className="h-5 w-5 " />
         <p className="text-base font-bold font-inter">Movie Z</p>

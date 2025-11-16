@@ -3,7 +3,7 @@
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa6";
 
-const UpcomingData = [
+const PopularData = [
   {
     image: "publicSecondSectionDearSanta.png",
     imdb: "6.4/10",
@@ -65,18 +65,18 @@ const UpcomingData = [
   },
 ];
 
-export const SecondSection = () => {
+export const ThirdSection = () => {
   return (
-    <div className="w-screen h-[1038px] px-20 gap-15">
-      <div className="w-100% h-[36px] flex justify-between items-center">
-        <p className="font-semibold text-2xl">Upcoming</p>
-        <div className="flex flex-row gap-3 ">
+    <div className="w-screen h-[978px] px-4  px-20">
+      <div className="w-100% h-[36px] flex justify-between">
+        <p className="font-semibold text-2xl">Popular</p>
+        <div className="flex flex-row items-center gap-3">
           <p className="font-medium text-sm">See more</p>
           <FaArrowRightLong />
         </div>
       </div>
       <div className="w-100% h-[910px] grid grid-rows-2 grid-cols-5 gap-8 ">
-        {UpcomingData.map((item, index) => {
+        {PopularData.map((item, index) => {
           return (
             <div
               key={index}

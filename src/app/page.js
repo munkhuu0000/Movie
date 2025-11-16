@@ -5,7 +5,7 @@ import { SecondSection } from "./_components/SecondSection";
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col gap-6">
       <Header />
       <FirstSection />
       <SecondSection />

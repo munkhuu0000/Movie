@@ -1,10 +1,11 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { nanoid } from "nanoid";
-import { FaStar } from "react-icons/fa6";
-import { TfiControlPlay } from "react-icons/tfi";
 import { FaArrowRightLong } from "react-icons/fa6";
+
+const UpcomingData = [{
+  Image: https://github.com/munkhuu0000/Movie/blob/main/public/SecondSection/DearSanta.png,
+  Name: Dear Santa,
+}];
 
 export const SecondSection = () => {
   return (

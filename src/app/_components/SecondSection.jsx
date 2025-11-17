@@ -5,61 +5,61 @@ import { FaStar } from "react-icons/fa6";
 
 const UpcomingData = [
   {
-    image: "publicSecondSectionDearSanta.png",
+    image: "/SecondSection/DearSanta.png",
     imdb: "6.4/10",
     name: "Dear Santa",
   },
   {
     image:
-      "https://github.com/munkhuu0000/Movie/blob/89fd22a14629acf5e86dedadc3d564e75813fb01/public/SecondSection/HowToTrain.jpg",
+      "/SecondSection/HowToTrain.jpg",
     imdb: "7.8/10",
     name: "How To Train Your Dragon Live Action",
   },
   {
     image:
-      "https://github.com/munkhuu0000/Movie/blob/89fd22a14629acf5e86dedadc3d564e75813fb01/public/SecondSection/Alien.jpg",
+      "/SecondSection/Alien.jpg",
     imdb: "7.1/10",
     name: "Alien: Romulus",
   },
   {
     image:
-      "https://github.com/munkhuu0000/Movie/blob/main/public/SecondSection/FromTheAshes.jpg",
+      "/SecondSection/FromTheAshes.jpg",
     imdb: "5.1/10",
     name: "From the Ashes",
   },
   {
     image:
-      "https://github.com/munkhuu0000/Movie/blob/main/public/SecondSection/SpaceDogs.jpg",
+      "/SecondSection/SpaceDogs.jpg",
     imdb: "5.0/10",
     name: "Space Dogs",
   },
   {
     image:
-      "https://github.com/munkhuu0000/Movie/blob/89fd22a14629acf5e86dedadc3d564e75813fb01/public/SecondSection/TheOrder.jpg",
+      "/SecondSection/TheOrder.jpg",
     imdb: "6.8/10",
     name: "The Order",
   },
   {
     image:
-      "https://github.com/munkhuu0000/Movie/blob/89fd22a14629acf5e86dedadc3d564e75813fb01/public/SecondSection/Y2K.jpg",
+      "/SecondSection/Y2K.jpg",
     imdb: "4.8/10",
     name: "Y2K",
   },
   {
     image:
-      "https://github.com/munkhuu0000/Movie/blob/89fd22a14629acf5e86dedadc3d564e75813fb01/public/SecondSection/SoloLeveling.jpg",
+      "/SecondSection/SoloLeveling.jpg",
     imdb: "8.7/10",
     name: "Solo Leveling: Reawakening",
   },
   {
     image:
-      "https://github.com/munkhuu0000/Movie/blob/89fd22a14629acf5e86dedadc3d564e75813fb01/public/SecondSection/GetAway.jpg",
+      "/SecondSection/GetAway.jpg",
     imdb: "5.3/10",
     name: "Get Away",
   },
   {
     image:
-      "https://github.com/munkhuu0000/Movie/blob/89fd22a14629acf5e86dedadc3d564e75813fb01/public/SecondSection/Sonic.png",
+      "/SecondSection/Sonic.png",
     imdb: "6.9/10",
     name: "Sonic the Hedgehog 3",
   },
@@ -68,25 +68,25 @@ const UpcomingData = [
 export const SecondSection = () => {
   return (
     <div className="w-screen h-[1038px] px-20 gap-15">
-      <div className="w-100% h-[36px] flex justify-between items-center">
+      <div className="w-100% h-9 flex justify-between items-center">
         <p className="font-semibold text-2xl">Upcoming</p>
         <div className="flex flex-row gap-3 ">
           <p className="font-medium text-sm">See more</p>
           <FaArrowRightLong />
         </div>
       </div>
-      <div className="w-100% h-[910px] grid grid-rows-2 grid-cols-5 gap-8 ">
+      <div className="w-100% h-[910px] grid grid-rows-2 grid-cols-5 gap-8 justify-center">
         {UpcomingData.map((item, index) => {
           return (
             <div
               key={index}
-              className="w-[230px] h-[440px] bg-[#F4F4F5] rounded-lg"
+              className="w-full h-[440px] bg-[#F4F4F5] rounded-lg"
             >
               <img
-                className="w-[230px] h-[340px] rounded-t-lg z-10"
+                className="w-full h-[340px] rounded-t-lg z-10"
                 src={item.image}
               />
-              <div className="w-[230px] h-[100px] px-3">
+              <div className="w-full h-[100px] px-3">
                 <div>
                   <FaStar className="h-4 w-4 fill-[#FDE047]" />
                   <p>{item.imdb}</p>

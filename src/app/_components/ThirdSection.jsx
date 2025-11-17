@@ -5,61 +5,61 @@ import { FaStar } from "react-icons/fa6";
 
 const PopularData = [
   {
-    image: "publicSecondSectionDearSanta.png",
+    image: "/SecondSection/DearSanta.png",
     imdb: "6.4/10",
     name: "Dear Santa",
   },
   {
     image:
-      "https://github.com/munkhuu0000/Movie/blob/89fd22a14629acf5e86dedadc3d564e75813fb01/public/SecondSection/HowToTrain.jpg",
+      "/SecondSection/HowToTrain.jpg",
     imdb: "7.8/10",
     name: "How To Train Your Dragon Live Action",
   },
   {
     image:
-      "https://github.com/munkhuu0000/Movie/blob/89fd22a14629acf5e86dedadc3d564e75813fb01/public/SecondSection/Alien.jpg",
+      "/SecondSection/Alien.jpg",
     imdb: "7.1/10",
     name: "Alien: Romulus",
   },
   {
     image:
-      "https://github.com/munkhuu0000/Movie/blob/main/public/SecondSection/FromTheAshes.jpg",
+      "/SecondSection/FromTheAshes.jpg",
     imdb: "5.1/10",
     name: "From the Ashes",
   },
   {
     image:
-      "https://github.com/munkhuu0000/Movie/blob/main/public/SecondSection/SpaceDogs.jpg",
+      "/SecondSection/SpaceDogs.jpg",
     imdb: "5.0/10",
     name: "Space Dogs",
   },
   {
     image:
-      "https://github.com/munkhuu0000/Movie/blob/89fd22a14629acf5e86dedadc3d564e75813fb01/public/SecondSection/TheOrder.jpg",
+      "/SecondSection/TheOrder.jpg",
     imdb: "6.8/10",
     name: "The Order",
   },
   {
     image:
-      "https://github.com/munkhuu0000/Movie/blob/89fd22a14629acf5e86dedadc3d564e75813fb01/public/SecondSection/Y2K.jpg",
+      "/SecondSection/Y2K.jpg",
     imdb: "4.8/10",
     name: "Y2K",
   },
   {
     image:
-      "https://github.com/munkhuu0000/Movie/blob/89fd22a14629acf5e86dedadc3d564e75813fb01/public/SecondSection/SoloLeveling.jpg",
+      "/SecondSection/SoloLeveling.jpg",
     imdb: "8.7/10",
     name: "Solo Leveling: Reawakening",
   },
   {
     image:
-      "https://github.com/munkhuu0000/Movie/blob/89fd22a14629acf5e86dedadc3d564e75813fb01/public/SecondSection/GetAway.jpg",
+      "/SecondSection/GetAway.jpg",
     imdb: "5.3/10",
     name: "Get Away",
   },
   {
     image:
-      "https://github.com/munkhuu0000/Movie/blob/89fd22a14629acf5e86dedadc3d564e75813fb01/public/SecondSection/Sonic.png",
+      "/SecondSection/Sonic.png",
     imdb: "6.9/10",
     name: "Sonic the Hedgehog 3",
   },
@@ -67,8 +67,8 @@ const PopularData = [
 
 export const ThirdSection = () => {
   return (
-    <div className="w-screen h-[978px] px-4  px-20">
-      <div className="w-100% h-[36px] flex justify-between">
+    <div className="w-screen h-[978px] px-20">
+      <div className="w-100% h-9 flex justify-between">
         <p className="font-semibold text-2xl">Popular</p>
         <div className="flex flex-row items-center gap-3">
           <p className="font-medium text-sm">See more</p>

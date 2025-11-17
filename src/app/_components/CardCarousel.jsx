@@ -17,7 +17,7 @@ const CardData = [
 
 export const CardCarousel = () => {
   return (
-    <div className="w-fit h-[600px] flex flex-row justify-around items-center px-4 border border-red-500 px-[0]">
+    <div className="w-fit h-[600px] flex flex-row justify-around items-center border border-red-500 px-0">
       <img
         src="firstSection/Wicked.jpg"
         className="w-[1440px] h-[600px] object-cover relative "

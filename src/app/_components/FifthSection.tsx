@@ -8,8 +8,8 @@ import { FiPhone } from "react-icons/fi";
 
 export const FifthSection = () => {
   return (
-    <div className="w-screen h-[280px] bg-indigo-700 px-4 px-20 flex items-center">
-      <div className="w-[247px] h-[200px] flex flex-col items-center gap-[12px]">
+    <div className="w-screen h-[280px] bg-indigo-700 px-20 flex items-center">
+      <div className="w-[247px] h-[200px] flex flex-col items-center gap-3">
         <div className="w-[247px] h-5 flex flex-row gap-2">
           <TbMovie className="w-6 h-6 text-[#FAFAFA]" />
           <p className="text-base font-bold font-inter text-[#FAFAFA]">
@@ -21,7 +21,7 @@ export const FifthSection = () => {
         </p>
       </div>
       <div className="w-[489px] h-[200px]"></div>
-      <div className="w-[300px] h-[200px] flex flex-col items-center gap-[12px]">
+      <div className="w-[300px] h-[200px] flex flex-col items-center gap-3">
         <p className="text-sm text-[#FAFAFA] font-normal">
           Contact Information
         </p>
@@ -49,7 +49,7 @@ export const FifthSection = () => {
         </div>
       </div>
 
-      <div className="w-[247px] h-[200px] flex flex-col items-start gap-[12px]">
+      <div className="w-[247px] h-[200px] flex flex-col items-start gap-3">
         <p className="text-sm text-[#FAFAFA] font-normal">Follow us</p>
         <div className="w-fit h-fit flex flex-row gap-3">
           <p className="text-sm text-[#FAFAFA] font-normal">Facebook</p>

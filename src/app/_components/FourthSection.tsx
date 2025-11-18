@@ -3,7 +3,7 @@
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa6";
 
-const UpcomingData = [
+const PopularData = [
   {
     image: "/SecondSection/DearSanta.png",
     imdb: "6.4/10",
@@ -65,18 +65,18 @@ const UpcomingData = [
   },
 ];
 
-export const SecondSection = () => {
+export const FourthSection = () => {
   return (
-    <div className="w-screen h-[1038px] px-20 gap-15">
-      <div className="w-100% h-9 flex justify-between items-center">
-        <p className="font-semibold text-2xl">Upcoming</p>
-        <div className="flex flex-row gap-3 ">
+    <div className="w-screen h-[978px] px-20">
+      <div className="w-100% h-9 flex justify-between">
+        <p className="font-semibold text-2xl">Top Rated</p>
+        <div className="flex flex-row items-center gap-3">
           <p className="font-medium text-sm">See more</p>
           <FaArrowRightLong />
         </div>
       </div>
-      <div className="w-100% h-[910px] grid grid-rows-2 grid-cols-5 gap-8 justify-center">
-        {UpcomingData.map((item, index) => {
+      <div className="w-full h-[910px] grid grid-rows-2 grid-cols-5 gap-8 ">
+        {PopularData.map((item, index) => {
           return (
             <div
               key={index}
@@ -87,7 +87,7 @@ export const SecondSection = () => {
                 src={item.image}
               />
               <div className="w-full h-[100px] px-3">
-                <div>
+                <div className="flex flex-row items-center gap-1">
                   <FaStar className="h-4 w-4 fill-[#FDE047]" />
                   <p>{item.imdb}</p>
                 </div>

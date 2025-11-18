@@ -5,9 +5,9 @@ import { FaStar } from "react-icons/fa6";
 
 const PopularData = [
   {
-    image: "/SecondSection/DearSanta.png",
-    imdb: "6.4/10",
-    name: "Dear Santa",
+    image: "/thirdSection/image.png",
+    imdb: "9.3/10",
+    name: "Shawshank Redemption",
   },
   {
     image:
@@ -65,11 +65,11 @@ const PopularData = [
   },
 ];
 
-export const FourthSection = () => {
+export const ThirdSection = () => {
   return (
     <div className="w-screen h-[978px] px-20">
       <div className="w-100% h-9 flex justify-between">
-        <p className="font-semibold text-2xl">Top Rated</p>
+        <p className="font-semibold text-2xl">Popular</p>
         <div className="flex flex-row items-center gap-3">
           <p className="font-medium text-sm">See more</p>
           <FaArrowRightLong />
@@ -80,14 +80,14 @@ export const FourthSection = () => {
           return (
             <div
               key={index}
-              className="w-[230px] h-[440px] bg-[#F4F4F5] rounded-lg"
+              className="w-full h-[440px] bg-[#F4F4F5] rounded-lg"
             >
               <img
-                className="w-[230px] h-[340px] rounded-t-lg z-10"
+                className="w-full h-[340px] rounded-t-lg z-10"
                 src={item.image}
               />
-              <div className="w-[230px] h-[100px] px-3">
-                <div>
+              <div className="w-full h-[100px] px-3">
+                <div className="flex flex-row items-center gap-1">
                   <FaStar className="h-4 w-4 fill-[#FDE047]" />
                   <p>{item.imdb}</p>
                 </div>

@@ -11,6 +11,8 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { Toggle } from "@/components/ui/toggle";
+import { ModeToggle } from "./ModeToggle";
 
 const GenreList = [
   { genre: "Action" },
@@ -83,9 +85,8 @@ export const Header = () => {
           placeholder="Search"
         />
       </div>
-      <div className="w-9 h-9 border border-[#E4E4E7] rounded-full flex justify-center items-center">
-        <LuMoon className="w-4 h-4" />
-      </div>
+
+      <ModeToggle />
     </div>
   );
 };

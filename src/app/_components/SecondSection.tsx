@@ -66,17 +66,16 @@ export const SecondSection = () => {
           <FaArrowRightLong />
         </div>
       </div>
-      <div className="w-100% h-[910px] grid grid-rows-2 grid-cols-5 gap-8 justify-center">
+      <div className="w-100% h-[910px] grid grid-rows-2 grid-cols-5 gap-8 justify-center ">
         {UpcomingData.map((item, index) => {
           return (
-            <div
-              key={index}
-              className="w-full h-[440px] bg-[#F4F4F5] rounded-lg"
-            >
-              <img
-                className="w-full h-[340px] rounded-t-lg z-10"
-                src={item.image}
-              />
+            <div key={index} className="w-full h-[440px] bg-muted rounded-lg">
+              <div className="w-full h-[340px] rounded-t-lg hover:bg-black hover:opacity-50 hover:duration-300 hover:ease-in-out z-2 ">
+                <img
+                  className="w-full h-[340px] rounded-t-lg z-10 "
+                  src={item.image}
+                />
+              </div>
               <div className="w-full h-[100px] px-3">
                 <div className="flex flex-row items-center gap-1">
                   <FaStar className="h-4 w-4 fill-[#FDE047]" />

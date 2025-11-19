@@ -10,56 +10,47 @@ const PopularData = [
     name: "Dear Santa",
   },
   {
-    image:
-      "/SecondSection/HowToTrain.jpg",
+    image: "/SecondSection/HowToTrain.jpg",
     imdb: "7.8/10",
     name: "How To Train Your Dragon Live Action",
   },
   {
-    image:
-      "/SecondSection/Alien.jpg",
+    image: "/SecondSection/Alien.jpg",
     imdb: "7.1/10",
     name: "Alien: Romulus",
   },
   {
-    image:
-      "/SecondSection/FromTheAshes.jpg",
+    image: "/SecondSection/FromTheAshes.jpg",
     imdb: "5.1/10",
     name: "From the Ashes",
   },
   {
-    image:
-      "/SecondSection/SpaceDogs.jpg",
+    image: "/SecondSection/SpaceDogs.jpg",
     imdb: "5.0/10",
     name: "Space Dogs",
   },
   {
-    image:
-      "/SecondSection/TheOrder.jpg",
+    image: "/SecondSection/TheOrder.jpg",
     imdb: "6.8/10",
     name: "The Order",
   },
   {
-    image:
-      "/SecondSection/Y2K.jpg",
+    image: "/SecondSection/Y2K.jpg",
     imdb: "4.8/10",
     name: "Y2K",
   },
   {
-    image:
-      "/SecondSection/SoloLeveling.jpg",
+    image: "/SecondSection/SoloLeveling.jpg",
     imdb: "8.7/10",
     name: "Solo Leveling: Reawakening",
   },
   {
-    image:
-      "/SecondSection/GetAway.jpg",
+    image: "/SecondSection/GetAway.jpg",
     imdb: "5.3/10",
     name: "Get Away",
   },
   {
-    image:
-      "/SecondSection/Sonic.png",
+    image: "/SecondSection/Sonic.png",
     imdb: "6.9/10",
     name: "Sonic the Hedgehog 3",
   },
@@ -78,14 +69,13 @@ export const FourthSection = () => {
       <div className="w-full h-[910px] grid grid-rows-2 grid-cols-5 gap-8 ">
         {PopularData.map((item, index) => {
           return (
-            <div
-              key={index}
-              className="w-full h-[440px] bg-[#F4F4F5] rounded-lg"
-            >
-              <img
-                className="w-full h-[340px] rounded-t-lg z-10"
-                src={item.image}
-              />
+            <div key={index} className="w-full h-[440px] bg-muted rounded-lg">
+              <div className="w-full h-[340px] rounded-t-lg hover:bg-black hover:opacity-50 hover:duration-300 hover:ease-in-out z-2 ">
+                <img
+                  className="w-full h-[340px] rounded-t-lg z-10"
+                  src={item.image}
+                />
+              </div>
               <div className="w-full h-[100px] px-3">
                 <div className="flex flex-row items-center gap-1">
                   <FaStar className="h-4 w-4 fill-[#FDE047]" />

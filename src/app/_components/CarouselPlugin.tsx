@@ -5,6 +5,11 @@ import Autoplay from "embla-carousel-autoplay";
 import { Button } from "@/components/ui/button";
 import { FaStar } from "react-icons/fa6";
 import { TfiControlPlay } from "react-icons/tfi";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -80,10 +85,22 @@ export function CarouselPlugin() {
                     {item.description}
                   </p>
                 </div>
-                <Button className="bg-[#F4F4F5] text-[#18181B] self-end">
-                  <TfiControlPlay />
-                  Watch trailer
-                </Button>
+                <div className="bg-[#F4F4F5] text-[#18181B] self-en w-[145px] rounded-lg px-2 h-10 flex items-center">
+                  <Popover>
+                    <PopoverTrigger className="flex flex-row gap-2 items-center">
+                      <TfiControlPlay />
+                      Watch trailer
+                    </PopoverTrigger>
+                    <PopoverContent className="relative w-[997px] h-[561px] top-[90%] left-[30%] bg-[#FAFAFA]">
+                      <video
+                        src="https://www.youtube.com/watch?v=6COmYeLsz4c"
+                        controls
+                        autoPlay
+                        className="bg-cover"
+                      />
+                    </PopoverContent>
+                  </Popover>
+                </div>
               </div>
             </div>
           </CarouselItem>

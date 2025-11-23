@@ -39,7 +39,6 @@ export const CardCarousel = () => {
         </div>
         <div className="w-[302px] h-30 pt-4 ">
           <p className="text-[12px] font-normal text-[#FAFAFA]">
-            {" "}
             "Elphaba, a misunderstood young woman because of her green skin, and
             Glinda, a popular girl, become friends at Shiz University in the
             Land of Oz. After an encounter with the Wonderful Wizard of Oz,

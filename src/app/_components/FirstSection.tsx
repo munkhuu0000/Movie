@@ -1,6 +1,4 @@
-import { FaChevronDown } from "react-icons/fa";
-import { LuMoon } from "react-icons/lu";
-import { CardCarousel } from "./CardCarousel";
+"use client";
 import { CarouselPlugin } from "./CarouselPlugin";
 
 export const FirstSection = () => {

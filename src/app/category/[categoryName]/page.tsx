@@ -1,0 +1,20 @@
+"use client";
+
+import { MovieSection } from "@/app/_components/MovieSection";
+import { use } from "react";
+
+const CategorySectionDetail = ({
+  params,
+}: {
+  params: Promise<{ categoryName: string }>;
+}) => {
+  const { categoryName } = use(params);
+
+  return (
+    <div className=" gap-96 ">
+      <MovieSection categoryName={categoryName} title={categoryName} />
+    </div>
+  );
+};
+
+export default CategorySectionDetail;

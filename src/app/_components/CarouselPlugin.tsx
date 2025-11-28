@@ -2,15 +2,6 @@
 
 import Autoplay from "embla-carousel-autoplay";
 import { FaStar } from "react-icons/fa6";
-import { TfiControlPlay } from "react-icons/tfi";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import React from "react";
-import ReactPlayer from "react-player";
-
 import {
   Carousel,
   CarouselContent,
@@ -19,8 +10,25 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { useEffect, useRef, useState } from "react";
-import { Movie } from "./unUsed/UpComing";
 import { Skeleton } from "@/components/ui/skeleton";
+import { PopOverTrailer } from "./PopOverTrailer";
+
+export type Movie = {
+  adult: Boolean;
+  backdrop_path: string;
+  genre_ids: number[];
+  id: number;
+  original_language: string;
+  original_title: string;
+  overview: string;
+  popularity: number;
+  poster_path: string;
+  release_date: string;
+  title: string;
+  video: boolean;
+  vote_average: number;
+  vote_count: number;
+};
 
 type Response = {
   page: number;
@@ -79,7 +87,7 @@ export function CarouselPlugin() {
                     src={
                       "https://image.tmdb.org/t/p/original/" + item?.poster_path
                     }
-                    className="w-screen aspect-5/2 object-center object-cover"
+                    className="w-screen h-[600px] object-center object-cover"
                   />
                   <div className="w-[404px] h-[264px] left-[140px] top-[260px] absolute">
                     <p className="text-base text-[#FFFFFF] font-normal font-family: var(--font-inter);">
@@ -102,26 +110,7 @@ export function CarouselPlugin() {
                         {item?.overview}
                       </p>
                     </div>
-                    <div className="bg-[#F4F4F5] text-[#18181B] self-en w-[145px] rounded-lg px-2 h-10 flex items-center">
-                      <Popover>
-                        <PopoverTrigger className="flex flex-row gap-2 items-center">
-                          <TfiControlPlay />
-                          Watch trailer
-                        </PopoverTrigger>
-                        <PopoverContent className="relative w-[997px] h-[561px] top-[90%] left-[30%] bg-[#FAFAFA]">
-                          <ReactPlayer
-                            src={
-                              "https://api.themoviedb.org/3/movie/" +
-                              item?.id +
-                              "/videos"
-                            }
-                            controls
-                            autoPlay
-                            className="w-full h-full object-cover"
-                          />
-                        </PopoverContent>
-                      </Popover>
-                    </div>
+                    <PopOverTrailer id={item.id} />
                   </div>
                 </div>
                 <div className="w-fit h-fit flex gap-2 absolute top-[90%] left-[50%] translate-[-50%]">

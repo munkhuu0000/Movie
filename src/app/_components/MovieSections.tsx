@@ -1,11 +1,6 @@
 "use client";
 import { MovieSection } from "./MovieSection";
-
-const categories = [
-  { categoryName: "upcoming", title: "Upcoming" },
-  { categoryName: "top_rated", title: "Top Rated" },
-  { categoryName: "popular", title: "Popular" },
-];
+import { categories } from "../_constants";
 
 export const MovieSections = () => {
   return (
@@ -16,6 +11,7 @@ export const MovieSections = () => {
             key={el.categoryName}
             categoryName={el.categoryName}
             title={el.title}
+            showButton={el.showButton}
           />
         );
       })}

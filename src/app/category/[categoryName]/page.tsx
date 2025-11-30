@@ -12,7 +12,11 @@ const CategorySectionDetail = ({
 
   return (
     <div className=" gap-96 ">
-      <MovieSection categoryName={categoryName} title={categoryName} />
+      <MovieSection
+        categoryName={categoryName}
+        title={categoryName}
+        showButton={false}
+      />
     </div>
   );
 };

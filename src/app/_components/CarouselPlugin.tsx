@@ -89,7 +89,7 @@ export function CarouselPlugin() {
                     }
                     className="w-screen h-[600px] object-center object-cover"
                   />
-                  <div className="w-[404px] h-[264px] left-[140px] top-[260px] absolute">
+                  <div className="w-[404px] h-[350px] left-[140px] top-[180px] absolute flex flex-col gap-2">
                     <p className="text-base text-[#FFFFFF] font-normal font-family: var(--font-inter);">
                       Now playing:
                     </p>
@@ -100,12 +100,12 @@ export function CarouselPlugin() {
                       <FaStar className="h-7 w-7 fill-[#FDE047]" />
                       <p className="text-[18px] font-semibold text-[#FAFAFA]">
                         {item?.vote_average.toFixed(1)}
-                        <span className="text-[16px] font-normal text-[#71717A]">
+                        <span className="text-[16px] font-normal text-[#FAFAFA]">
                           /10
                         </span>
                       </p>
                     </div>
-                    <div className="w-[302px] h-30 pt-4 ">
+                    <div className="w-[302px] h-fit pt-4 ">
                       <p className="text-[12px] font-normal text-[#FAFAFA]">
                         {item?.overview}
                       </p>

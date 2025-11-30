@@ -31,10 +31,11 @@ type Response = {
 type MovieSectionProps = {
   categoryName: string;
   title: string;
+  showButton: boolean;
 };
 
 export const MovieSection = (props: MovieSectionProps) => {
-  const { categoryName, title } = props;
+  const { categoryName, title, showButton } = props;
   const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -84,12 +85,14 @@ export const MovieSection = (props: MovieSectionProps) => {
         <div className="flex flex-col gap-8">
           <div className="w-100% flex justify-between items-center">
             <p className="font-semibold text-2xl">{title}</p>
-            <Link href={`/category/${categoryName}`}>
-              <button className="flex flex-row gap-2 px-4 py-2 font-medium text-sm items-center">
-                See more
-                <FaArrowRightLong />
-              </button>
-            </Link>
+            {showButton && (
+              <Link href={`/category/${categoryName}`}>
+                <button className="flex flex-row gap-2 px-4 py-2 font-medium text-sm items-center">
+                  See more
+                  <FaArrowRightLong />
+                </button>
+              </Link>
+            )}
           </div>
           <div className="w-100% grid grid-rows-2 grid-cols-5 gap-8 justify-center ">
             {movies.slice(0, 10).map((movie) => (

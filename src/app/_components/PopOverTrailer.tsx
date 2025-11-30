@@ -42,26 +42,29 @@ export function PopOverTrailer(props: popOver) {
         {
           method: "GET",
           headers: {
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlYWY2ZTY3OWMzNmQ3MzMxNGJkYWJiNmY0MzA2NjRjOCIsIm5iZiI6MTc2MzUyMjg0Mi43ODgsInN1YiI6IjY5MWQzOTFhN2QwOTFjNzQxMzU3Y2Y1NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.gsBHhf6bC6Y2ZqgPWinC5LgILDD4tqpuh6zO-CAwvIU",
+            Authorization: `Bearer ${process?.env.NEXT_PUBLIC_TMDB_API_TOKEN} `,
             accept: "application/json",
           },
         }
       );
 
       const data = (await res.json()) as Response;
+      const oTrailer = data.results?.find(
+        (element: any) => element.type === "Trailer"
+      )?.key;
 
-      console.log(Response);
+      console.log(data);
 
-      setMTrailer(data.results[2].key);
+      // setMTrailer(data?.results[0].key);
+      setMTrailer(oTrailer?.key || "");
     };
 
     GetData();
   }, []);
 
   return (
-    <div className="w-scfreen h-[600px]">
-      <div className="bg-[#F4F4F5] text-[#18181B] self-en w-[145px] rounded-lg px-2 h-10 flex items-center">
+    <div className="w-screen h-[600px]">
+      <div className="bg-[#F4F4F5] text-[#18181B] w-[145px] rounded-lg px-2 h-10 flex items-center">
         <Popover>
           <PopoverTrigger className="flex flex-row gap-2 items-center">
             <TfiControlPlay />

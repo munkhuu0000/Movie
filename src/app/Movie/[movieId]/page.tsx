@@ -1,3 +1,7 @@
+"use client";
+
+import { FirstSection } from "@/app/_components/FirstSection";
+import { Header } from "@/app/_components/Header";
 import { use } from "react";
 
 const MovieDetailPage = ({
@@ -6,7 +10,12 @@ const MovieDetailPage = ({
   params: Promise<{ movieId: string }>;
 }) => {
   const { movieId } = use(params);
-  return <div>My Post: {movieId}</div>;
-};
 
+  return (
+    <div>
+      <Header />
+      {movieId}
+    </div>
+  );
+};
 export default MovieDetailPage;

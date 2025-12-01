@@ -53,7 +53,7 @@ export const Header = () => {
       ) : (
         <div className="w-screen h-[59px] flex flex-row justify-around items-center px-4">
           <div className="w-[92px] h-fit gap-2 flex flex-row items-center">
-            <img src="header\film.png" className="h-5 w-5 " />
+            <img src="/header/film.png" className="h-5 w-5 " />
             <p className="text-base font-bold font-inter">Movie Z</p>
           </div>
           <div className="w-[488px] h-9 flex flex-row gap-2 relative">

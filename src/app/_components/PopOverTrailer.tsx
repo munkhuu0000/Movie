@@ -42,7 +42,7 @@ export function PopOverTrailer(props: popOver) {
         {
           method: "GET",
           headers: {
-            Authorization: `Bearer ${process?.env.NEXT_PUBLIC_TMDB_API_TOKEN} `,
+            Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlYWY2ZTY3OWMzNmQ3MzMxNGJkYWJiNmY0MzA2NjRjOCIsIm5iZiI6MTc2MzUyMjg0Mi43ODgsInN1YiI6IjY5MWQzOTFhN2QwOTFjNzQxMzU3Y2Y1NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.gsBHhf6bC6Y2ZqgPWinC5LgILDD4tqpuh6zO-CAwvIU `,
             accept: "application/json",
           },
         }
@@ -50,13 +50,14 @@ export function PopOverTrailer(props: popOver) {
 
       const data = (await res.json()) as Response;
       const oTrailer = data.results?.find(
-        (element: any) => element.type === "Trailer"
+        (element: any) =>
+          element.type === "Trailer" || element.type === "Teaser"
       )?.key;
 
       console.log(data);
 
       // setMTrailer(data?.results[0].key);
-      setMTrailer(oTrailer?.key || "");
+      setMTrailer(oTrailer || "");
     };
 
     GetData();

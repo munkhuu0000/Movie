@@ -63,7 +63,7 @@ export const MovieSection = (props: MovieSectionProps) => {
     GetData();
   }, []);
 
-  if (!loading) {
+  if (loading) {
     return (
       <div className="w-screen px-20 gap-15">
         <div className="flex flex-col gap-8">

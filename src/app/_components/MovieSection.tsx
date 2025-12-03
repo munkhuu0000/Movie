@@ -103,11 +103,11 @@ export const MovieSection = (props: MovieSectionProps) => {
             <Link
               href={`/movie/${movie?.id}`}
               key={movie.id}
-              className="w-full h-[440px] bg-muted rounded-lg"
+              className="w-full bg-muted rounded-lg"
             >
-              <div className="w-full h-[340px] rounded-t-lg hover:bg-black hover:opacity-50 hover:duration-300 hover:ease-in-out z-2 ">
+              <div className="w-full aspect-2/3 rounded-t-lg hover:bg-black hover:opacity-50 hover:duration-300 hover:ease-in-out z-2 ">
                 <img
-                  className="w-full h-[340px] rounded-t-lg z-10 "
+                  className="w-full h-full rounded-t-lg z-10 "
                   src={"https://image.tmdb.org/t/p/w500/" + movie.poster_path}
                 />
               </div>

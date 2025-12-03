@@ -4,6 +4,7 @@ import { FirstSection } from "@/app/_components/FirstSection";
 import { Header } from "@/app/_components/Header";
 import { use } from "react";
 import { MovieIntro } from "./_components/MovieIntro";
+import { FifthSection } from "@/app/_components/FifthSection";
 
 const MovieDetailPage = ({
   params,
@@ -16,6 +17,7 @@ const MovieDetailPage = ({
     <div>
       <Header />
       <MovieIntro movieId={movieId} />
+      <FifthSection />
     </div>
   );
 };

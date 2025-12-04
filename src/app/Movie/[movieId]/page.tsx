@@ -9,7 +9,7 @@ import { FifthSection } from "@/app/_components/FifthSection";
 const MovieDetailPage = ({
   params,
 }: {
-  params: Promise<{ movieId: string }>;
+  params: Promise<{ movieId: number }>;
 }) => {
   const { movieId } = use(params);
 

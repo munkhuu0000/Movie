@@ -74,10 +74,7 @@ export const MovieSection = (props: MovieSectionProps) => {
 
           <div className="w-100% grid grid-rows-2 grid-cols-5 gap-8 justify-center ">
             {[...Array(10)].map((_, i) => (
-              <Skeleton
-                key={i}
-                className="w-full h-[440px] bg-muted rounded-lgl"
-              />
+              <Skeleton key={i} className="w-full aspect-2/3 rounded-t-lg" />
             ))}
           </div>
         </div>

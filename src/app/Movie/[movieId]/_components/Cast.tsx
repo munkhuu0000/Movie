@@ -6,11 +6,42 @@ import { useEffect, useState } from "react";
 type Castprops = {
   movieId: number;
 };
-type Response = {};
+type Response = {
+  id: number;
+  cast: [];
+  crew: [];
+};
+
+type cast = {
+  adult: boolean;
+  id: number;
+  known_for_department: string;
+  name: string;
+  original_name: string;
+  popularity: number;
+  profile_path: string;
+  cast_id: number;
+  character: string;
+  credit_id: string;
+  order: number;
+};
+type crew = {
+  adult: boolean;
+  gender: number;
+  id: number;
+  known_for_department: string;
+  name: string;
+  original_name: string;
+  popularity: number;
+  profile_path: string;
+  credit_id: string;
+  department: string;
+  job: string;
+};
 
 export const Cast = (props: Castprops) => {
   const { movieId } = props;
-  const [movieCast, setMovieCast] = useState<Castprops>();
+  const [movieCast, setMovieCast] = useState<Response>();
 
   useEffect(() => {
     const GetData = async () => {
@@ -26,15 +57,20 @@ export const Cast = (props: Castprops) => {
         }
       );
       const data = (await res.json()) as Response;
+      console.log(data);
 
-      setMovieCast(data.id);
+      const cast = data?.cast
+        .sort((a: cast, b: cast) => b?.popularity - a?.popularity)
+        .slice(0, 3)
+        .map((el: cast) => el?.name)
+        .join(".");
+      setMovieCast(data);
     };
     GetData();
-  });
+  }, []);
   return (
-    <div
-      className="w-screen h-10 border-amber-300 border-2
-  "
-    ></div>
+    <div className="w-screen h-10 border-amber-300 border-2">
+      {/* {movieCast?.cast} */}
+    </div>
   );
 };

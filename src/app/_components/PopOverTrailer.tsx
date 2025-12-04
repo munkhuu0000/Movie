@@ -64,7 +64,7 @@ export function PopOverTrailer(props: popOver) {
   }, []);
 
   return (
-    <div className="w-screen h-[600px]">
+    <div className="w-screen h-full">
       <div className="bg-[#F4F4F5] text-[#18181B] w-[145px] rounded-lg px-2 h-10 flex items-center">
         <Popover>
           <PopoverTrigger className="flex flex-row gap-2 items-center">

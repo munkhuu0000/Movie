@@ -6,10 +6,12 @@ import { Skeleton } from "@/components/ui/skeleton";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Cast } from "./Cast";
+import { PopOverTrailer } from "@/app/_components/PopOverTrailer";
 
 type MovieIntroProps = {
-  movieId: string;
+  movieId: number;
 };
+
 type Response = {
   adult: boolean;
   backdrop_path: string;
@@ -76,7 +78,6 @@ export const MovieIntro = (props: MovieIntroProps) => {
             <div className="flex flex-row justify-between">
               <FaStar className="h-7 w-7 fill-[#FDE047]" />
               <p className="font-bold text-[18px]">
-                {" "}
                 {intro?.vote_average.toFixed(1)}
               </p>
               <p className="text-muted-foreground flex items-center text-[16px]">
@@ -126,12 +127,19 @@ export const MovieIntro = (props: MovieIntroProps) => {
           <p className="font-normal text-[12px]">{intro?.vote_count}</p>
         </div>
       </div>
-      <div className="w-full h-[428px] flex gap-8 border-2 border-black">
-        <div className="w-[290] h-[428] border-2 border-amber-300">
+      <div className="w-screen flex justify-center gap-8 border-2 border-black">
+        <div className="w-[50%]">
           <img
             src={"https://image.tmdb.org/t/p/w500/" + intro?.poster_path}
-            className="w-full"
+            className="object-center object-cover"
           />
+        </div>
+        <div className="w-[50%] aspect-3/2">
+          <img
+            src={"https://image.tmdb.org/t/p/w500/" + intro?.poster_path}
+            className=" object-center object-cover"
+          />
+          <PopOverTrailer id={movieId} />
         </div>
       </div>
       <div className="flex h-fit gap-5 flex-col">
@@ -144,7 +152,7 @@ export const MovieIntro = (props: MovieIntroProps) => {
         </div>
         <p>{intro?.overview}</p>
       </div>
-      <Cast movieId={Number(movieId)} />
+      <Cast movieId={movieId} />
       <div className="h-[163] border-2 border-amber-950"></div>
       <div className="h-[441] border-2 border-amber-950"></div>
     </div>

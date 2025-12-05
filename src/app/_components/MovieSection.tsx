@@ -4,6 +4,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa6";
 import { Skeleton } from "@/components/ui/skeleton";
 import Link from "next/link";
+import { categories } from "../_constants";
 
 export type Movie = {
   adult: Boolean;

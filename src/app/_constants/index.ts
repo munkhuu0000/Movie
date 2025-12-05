@@ -4,6 +4,12 @@ export const categories = [
   { categoryName: "popular", title: "Popular", showButton: true },
 ];
 
+export type categoriesType = {
+  categoryName: string;
+  title: string;
+  showButton: boolean;
+};
+
 export type Movie = {
   adult: Boolean;
   backdrop_path: string;
@@ -19,4 +25,11 @@ export type Movie = {
   video: boolean;
   vote_average: number;
   vote_count: number;
+};
+
+export type Response = {
+  page: number;
+  results: Movie[];
+  total_pages: number;
+  total_results: number;
 };

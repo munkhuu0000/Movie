@@ -64,13 +64,14 @@ export const Cast = (props: Castprops) => {
         .slice(0, 3)
         .map((el: cast) => el?.name)
         .join(".");
+
       setMovieCast(data);
     };
     GetData();
   }, []);
   return (
-    <div className="w-screen h-10 border-amber-300 border-2">
-      {/* {movieCast?.cast} */}
+    <div className="w-full px-45 flex flex-col gap-6 border-amber-300 border-4">
+      <div className="h-[41px] border-b-2 border-[#E4E4E7]"></div>
     </div>
   );
 };

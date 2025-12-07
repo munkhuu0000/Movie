@@ -54,8 +54,6 @@ export function PopOverTrailer(props: popOver) {
           element.type === "Trailer" || element.type === "Teaser"
       )?.key;
 
-      console.log(data);
-
       // setMTrailer(data?.results[0].key);
       setMTrailer(oTrailer || "");
     };

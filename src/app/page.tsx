@@ -7,10 +7,8 @@ import { MovieSections } from "./_components/MovieSections";
 export default function Home() {
   return (
     <div className="flex flex-col gap-6">
-      <Header />
       <FirstSection />
       <MovieSections />
-      <FifthSection />
     </div>
   );
 }

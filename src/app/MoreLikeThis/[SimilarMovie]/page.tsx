@@ -1,26 +1,16 @@
 "use client";
+
+import { Pagination } from "@/components/ui/pagination";
+import { SimilarMovies } from "../../_components/SimilarMovies";
 import { useEffect, useState } from "react";
-import { FaArrowRightLong } from "react-icons/fa6";
-import { FaStar } from "react-icons/fa6";
 import { Skeleton } from "@/components/ui/skeleton";
-import Link from "next/link";
-import { Moviecard } from "./MovieCard";
+import { Link } from "lucide-react";
+import { FaArrowRightLong } from "react-icons/fa6";
+import { Moviecard } from "@/app/_components/MovieCard";
+import { useParams } from "next/navigation";
 
-type Response = {
-  page: number;
-  results: Movie[];
-  total_pages: number;
-  total_results: number;
-};
-
-type MovieSectionProps = {
-  categoryName: string;
-  title: string;
-  showButton: boolean;
-};
-
-export const MovieSection = (props: MovieSectionProps) => {
-  const { categoryName, title, showButton } = props;
+const MoreLikeThis = () => {
+  const { movieId } = useParams();
   const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -28,7 +18,7 @@ export const MovieSection = (props: MovieSectionProps) => {
     const GetData = async () => {
       setLoading(true);
       const res = await fetch(
-        `https://api.themoviedb.org/3/movie/${categoryName}?language=en-US&page=1`,
+        `https://api.themoviedb.org/3/movie/${movieId}/similar?language=en-US&page=1`,
         {
           method: "GET",
           headers: {
@@ -39,7 +29,7 @@ export const MovieSection = (props: MovieSectionProps) => {
         }
       );
 
-      const data = (await res.json()) as Response;
+      const data = (await res.json()) as MovieResponse;
 
       setMovies(data.results);
       setLoading(false);
@@ -56,7 +46,6 @@ export const MovieSection = (props: MovieSectionProps) => {
             <Skeleton className="w-[250px] h-8 rounded-full"></Skeleton>
             <Skeleton className="w-[250px] h-8 rounded-full"></Skeleton>
           </div>
-
           <div className="w-100% grid grid-rows-2 grid-cols-5 gap-8 justify-center ">
             {[...Array(10)].map((_, i) => (
               <Skeleton key={i} className="w-full aspect-2/3 rounded-t-lg" />
@@ -70,18 +59,10 @@ export const MovieSection = (props: MovieSectionProps) => {
     <div className="w-screen px-20 gap-15">
       <div className="flex flex-col gap-8">
         <div className="w-100% flex justify-between items-center">
-          <p className="font-semibold text-2xl">{title}</p>
-          {showButton && (
-            <Link href={`/category/${categoryName}`}>
-              <button className="flex flex-row gap-2 px-4 py-2 font-medium text-sm items-center">
-                See more
-                <FaArrowRightLong />
-              </button>
-            </Link>
-          )}
+          <p className="font-semibold text-2xl">More Like This</p>
         </div>
         <div className="w-100% grid grid-rows-2 grid-cols-5 gap-8 justify-center ">
-          {movies.slice(0, 10).map((movie) => (
+          {movies.map((movie) => (
             <Moviecard
               key={movie?.id}
               id={movie?.id}
@@ -95,3 +76,5 @@ export const MovieSection = (props: MovieSectionProps) => {
     </div>
   );
 };
+
+export default MoreLikeThis;

@@ -5,8 +5,7 @@ import { MoviesByGenre } from "../_components/MoviesByGenre";
 
 const Genre = () => {
   return (
-    <div className="flex gap-10">
-      <Genres />
+    <div className="w-screen px-20 gap-15">
       <MoviesByGenre />
     </div>
   );

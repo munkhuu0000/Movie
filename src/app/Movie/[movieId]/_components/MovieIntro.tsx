@@ -5,8 +5,9 @@ import { FaStar } from "react-icons/fa6";
 import { Skeleton } from "@/components/ui/skeleton";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
-import { Cast } from "./Cast";
 import { PopOverTrailer } from "@/app/_components/PopOverTrailer";
+import { MovieCredits } from "./MovieCredits";
+import { SimilarMovies } from "@/app/_components/SimilarMovies";
 
 type MovieIntroProps = {
   movieId: number;
@@ -114,7 +115,7 @@ export const MovieIntro = (props: MovieIntroProps) => {
           </div>
         </div>
       </div>
-      <div className="flex h-fit gap-5 flex-col">
+      <div className="flex h-fit gap-5 flex-col pb-3">
         <div className="flex gap-3">
           {intro?.genres.map((el) => (
             <Link href={`/genre/${el?.id}`} key={el?.id}>
@@ -124,10 +125,17 @@ export const MovieIntro = (props: MovieIntroProps) => {
         </div>
         <p>{intro?.overview}</p>
       </div>
-      <div className="h-[163] border-2 border-amber-950">
-        {/* <Cast movieId={movieId} /> */}
+      <MovieCredits movieId={movieId} />
+      <div className="w-100% flex justify-between items-center">
+        <p className="font-semibold text-2xl">More like this</p>
+        <Link href={`/MoreLikeThis`}>
+          <button className="flex flex-row gap-2 px-4 py-2 font-medium text-sm items-center">
+            See more
+            <FaArrowRightLong />
+          </button>
+        </Link>
       </div>
-      <div className="h-[441] border-2 border-amber-950"></div>
+      <SimilarMovies id={movieId} />
     </div>
   );
 };

@@ -1,8 +1,6 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { Movie } from "../_constants";
-import { Response } from "../_constants";
 import { useSearchParams } from "next/navigation";
 import { Moviecard } from "./MovieCard";
 
@@ -29,14 +27,14 @@ export const MoviesByGenre = () => {
         }
       );
 
-      const data = (await res.json()) as Response;
+      const data = (await res.json()) as MovieResponse;
       console.log(data);
 
       setMovies(data?.results);
     };
 
     GetData();
-  }, []);
+  }, [genreIds]);
   return (
     <div>
       <div className="w-100% grid grid-rows-2 grid-cols-5 gap-8 justify-center">

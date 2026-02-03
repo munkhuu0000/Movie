@@ -1,15 +1,14 @@
 "use client";
 
-import { Divide } from "lucide-react";
 import { useEffect, useState } from "react";
 
 type Castprops = {
   movieId: number;
 };
-type Response = {
+type Credits = {
   id: number;
-  cast: [];
-  crew: [];
+  cast: cast[];
+  crew: crew[];
 };
 
 type cast = {
@@ -39,9 +38,13 @@ type crew = {
   job: string;
 };
 
-export const Cast = (props: Castprops) => {
+export const MovieCredits = (props: Castprops) => {
   const { movieId } = props;
-  const [movieCast, setMovieCast] = useState<Response>();
+  const [credit, setCredit] = useState({
+    stars: "",
+    director: "",
+    writers: "",
+  });
 
   useEffect(() => {
     const GetData = async () => {
@@ -56,22 +59,42 @@ export const Cast = (props: Castprops) => {
           },
         }
       );
-      const data = (await res.json()) as Response;
+      const data = (await res.json()) as Credits;
       console.log(data);
 
-      const cast = data?.cast
-        .sort((a: cast, b: cast) => b?.popularity - a?.popularity)
+      const stars = data.cast
+        .sort((a, b) => b?.popularity - a?.popularity)
         .slice(0, 3)
-        .map((el: cast) => el?.name)
-        .join(".");
+        .map((el) => el.name)
+        .join("  ·  ");
 
-      setMovieCast(data);
+      const director = data?.crew?.filter((el) => el.job === "Director")[0]
+        .name;
+      console.log(director);
+
+      const writers = data?.crew?.filter((el) => el?.job === "Screenplay")[0]
+        ?.name;
+
+      setCredit({ stars, director, writers });
+
+      // setMovieCast(data);
     };
     GetData();
   }, []);
   return (
-    <div className="w-full px-45 flex flex-col gap-6 border-amber-300 border-4">
-      <div className="h-[41px] border-b-2 border-[#E4E4E7]"></div>
+    <div className="w-full flex flex-col gap-6">
+      <div className="w-full h-[41px] flex gap-10 border-b-2 border-[#E4E4E7]">
+        <p>Stars</p>
+        <div className="h-[41px] w-full ">{credit?.stars}</div>
+      </div>
+      <div className="w-full h-[41px] flex gap-10 border-b-2 border-[#E4E4E7]">
+        <p>Director</p>
+        <div className="h-[41px] w-full">{credit?.director}</div>
+      </div>
+      <div className="w-full h-[41px] flex gap-10 border-b-2 border-[#E4E4E7]">
+        <p>Writer</p>
+        <div className="h-[41px] w-full">{credit?.writers}</div>
+      </div>
     </div>
   );
 };

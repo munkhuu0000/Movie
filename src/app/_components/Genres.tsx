@@ -35,7 +35,12 @@ export const Genres = () => {
       : [...genreIds, genreId];
 
     params.set("genreIds", updatedGenreIds.join(","));
-    router.push(pathname + "?" + params);
+    if (updatedGenreIds.length > 0) {
+      console.log(updatedGenreIds);
+      router.push("/genres?" + params);
+    } else {
+      router.push("/genres");
+    }
   };
 
   useEffect(() => {

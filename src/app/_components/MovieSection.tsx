@@ -6,7 +6,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import Link from "next/link";
 import { Moviecard } from "./MovieCard";
 
-type Response = {
+export type Response = {
   page: number;
   results: Movie[];
   total_pages: number;
@@ -36,7 +36,7 @@ export const MovieSection = (props: MovieSectionProps) => {
               "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlYWY2ZTY3OWMzNmQ3MzMxNGJkYWJiNmY0MzA2NjRjOCIsIm5iZiI6MTc2MzUyMjg0Mi43ODgsInN1YiI6IjY5MWQzOTFhN2QwOTFjNzQxMzU3Y2Y1NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.gsBHhf6bC6Y2ZqgPWinC5LgILDD4tqpuh6zO-CAwvIU",
             accept: "application/json",
           },
-        }
+        },
       );
 
       const data = (await res.json()) as Response;

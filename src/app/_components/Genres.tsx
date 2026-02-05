@@ -60,7 +60,7 @@ export const Genres = () => {
     GetData();
   }, []);
   return (
-    <div className="w-[79px] h-9 border border-[#E4E4E7] rounded-md flex justify-center items-center gap-1">
+    <div className="w-[100px] h-9 border border-[#E4E4E7] rounded-md flex justify-center items-center gap-1">
       <Popover>
         <PopoverTrigger className="flex flex-row items-center gap-1">
           <FaChevronDown />

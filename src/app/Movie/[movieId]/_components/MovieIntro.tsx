@@ -58,7 +58,7 @@ export const MovieIntro = (props: MovieIntroProps) => {
               "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlYWY2ZTY3OWMzNmQ3MzMxNGJkYWJiNmY0MzA2NjRjOCIsIm5iZiI6MTc2MzUyMjg0Mi43ODgsInN1YiI6IjY5MWQzOTFhN2QwOTFjNzQxMzU3Y2Y1NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.gsBHhf6bC6Y2ZqgPWinC5LgILDD4tqpuh6zO-CAwvIU",
             accept: "application/json",
           },
-        }
+        },
       );
 
       const data = (await res.json()) as Response;
@@ -128,12 +128,12 @@ export const MovieIntro = (props: MovieIntroProps) => {
       <MovieCredits movieId={movieId} />
       <div className="w-100% flex justify-between items-center">
         <p className="font-semibold text-2xl">More like this</p>
-        <Link href={`/MoreLikeThis`}>
+        {/* <Link href={`/MoreLikeThis`}>
           <button className="flex flex-row gap-2 px-4 py-2 font-medium text-sm items-center">
             See more
             <FaArrowRightLong />
           </button>
-        </Link>
+        </Link> */}
       </div>
       <SimilarMovies id={movieId} />
     </div>

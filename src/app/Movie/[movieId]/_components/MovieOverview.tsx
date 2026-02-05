@@ -1,8 +1,7 @@
 "use client";
 
+import { Response } from "@/app/_components/MovieSection";
 import { useEffect, useState } from "react";
-import { Movie } from "@/app/_constants";
-import { Response } from "@/app/_constants";
 import { title } from "process";
 import { Link } from "lucide-react";
 import { FaStar } from "react-icons/fa6";
@@ -28,7 +27,7 @@ export const MovieOverview = (props: MovieOverviewProps) => {
               "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlYWY2ZTY3OWMzNmQ3MzMxNGJkYWJiNmY0MzA2NjRjOCIsIm5iZiI6MTc2MzUyMjg0Mi43ODgsInN1YiI6IjY5MWQzOTFhN2QwOTFjNzQxMzU3Y2Y1NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.gsBHhf6bC6Y2ZqgPWinC5LgILDD4tqpuh6zO-CAwvIU",
             accept: "application/json",
           },
-        }
+        },
       );
 
       const data = (await res.json()) as Response;

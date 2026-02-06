@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { PropsWithChildren, ReactNode } from "react";
+import { PropsWithChildren, ReactNode, Suspense } from "react";
 import { ThemeProvider } from "./_components/theme-provider";
 import { Header } from "./_components/Header";
 import { FifthSection } from "./_components/FifthSection";
@@ -30,16 +30,18 @@ export default function RootLayout({ children }: PropsWithChildren) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Header />
-          {children}
-          <FifthSection />
-        </ThemeProvider>
+        <Suspense>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Header />
+            {children}
+            <FifthSection />
+          </ThemeProvider>
+        </Suspense>
       </body>
     </html>
   );

@@ -16,7 +16,7 @@ export const Moviecard = (props: card) => {
   
   return (
     <Link
-      href={`/Movie/${props?.id}`}
+      href={`/movie/${props?.id}`}
       key={props?.id}
       className="w-full bg-muted rounded-lg"
     >

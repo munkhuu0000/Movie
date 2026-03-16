@@ -16,7 +16,6 @@ export const TopRated = () => {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    setLoading(true);
     const GetData = async () => {
       const res = await fetch(
         "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
@@ -33,10 +32,10 @@ export const TopRated = () => {
       const data = (await res.json()) as Response;
 
       setMovies(data.results);
+      setLoading(false);
     };
 
     GetData();
-    setLoading(false);
   }, []);
 
   return (

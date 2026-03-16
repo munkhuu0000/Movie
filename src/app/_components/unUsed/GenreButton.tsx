@@ -49,7 +49,7 @@ export const Header = () => {
           <div className="w-full h-1 bg-[#E4E4E7] "></div>
           <div className="flex flex-wrap gap-1">
           {GenreList.map((item,index) =>{
-            return( <Button variant="secondary">{item.genre} <MdKeyboardArrowRight />
+            return( <Button key={index} variant="secondary">{item.genre} <MdKeyboardArrowRight />
             </Button>)
           })}
           </div>

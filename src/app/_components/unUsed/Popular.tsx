@@ -35,7 +35,6 @@ export const Popular = () => {
     };
 
     GetData();
-    setLoading(false);
   }, []);
 
   return (

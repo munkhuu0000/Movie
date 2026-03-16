@@ -32,7 +32,6 @@ export const UpComing = () => {
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
-    setLoading(true);
     const GetData = async () => {
       const res = await fetch(
         "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1",
@@ -49,11 +48,10 @@ export const UpComing = () => {
       const data = (await res.json()) as Response;
 
       setMovies(data.results);
+      setLoading(false);
     };
 
     GetData();
-
-    setLoading(false);
   }, []);
 
   return (

@@ -17,13 +17,12 @@ import { Response } from "./MovieSection";
 import { MovieSearchCard } from "./MovieSearchCard";
 
 export const Header = () => {
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading] = useState<boolean>(false);
   const [open, setOpen] = useState(false);
   const [movies, setMovies] = useState<Movie[]>([]);
   const [query, setQuery] = useState("");
 
   useEffect(() => {
-    setOpen(true);
     const fetchMovies = async () => {
       const res = await fetch(
         `https://api.themoviedb.org/3/search/movie?query=${query}&language=en-US&page=1`,
@@ -44,9 +43,6 @@ export const Header = () => {
     fetchMovies();
   }, [query]);
 
-  useEffect(() => {
-    setLoading(false);
-  }, []);
 
   console.log("movie", movies);
 

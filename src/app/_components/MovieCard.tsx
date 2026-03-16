@@ -11,10 +11,12 @@ type card = {
   title: string;
 };
 
+
 export const Moviecard = (props: card) => {
+  
   return (
     <Link
-      href={`/movie/${props?.id}`}
+      href={`/Movie/${props?.id}`}
       key={props?.id}
       className="w-full bg-muted rounded-lg"
     >

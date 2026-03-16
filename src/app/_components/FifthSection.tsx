@@ -16,7 +16,7 @@ export const FifthSection = () => {
 
   if (loading) {
     return (
-      <div className="w-screen mt-5 h-[280px] bg-indigo-700 px-20 flex items-center">
+      <div className="w-screen mt-5 min-h-[280px] bg-indigo-700 px-20 flex items-center">
         <div className="w-[247px] h-[200px] flex flex-col items-center gap-3">
           <Skeleton className="w-[120px] h-5 rounded-full" />
           <Skeleton className="w-[180px] h-4 rounded-full" />

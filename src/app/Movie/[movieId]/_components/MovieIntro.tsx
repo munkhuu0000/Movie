@@ -5,6 +5,7 @@ import { FaStar } from "react-icons/fa6";
 import { Skeleton } from "@/components/ui/skeleton";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
+import { Image } from "lucide-react";
 import { PopOverTrailer } from "@/app/_components/PopOverTrailer";
 import { MovieCredits } from "./MovieCredits";
 import { SimilarMovies } from "@/app/_components/SimilarMovies";
@@ -72,8 +73,18 @@ export const MovieIntro = (props: MovieIntroProps) => {
 
   if (loading) {
     return (
-      <div className="w-screen mt-[52px] px-45 flex flex-col gap-6">
-        <Skeleton className="w-full h-[72px] flex justify-between "></Skeleton>
+      <div className="w-screen mt-[52px] px-45 flex flex-col gap-6 min-h-screen">
+        <Skeleton className="w-full h-[72px]"></Skeleton>
+        <div className="w-full flex flex-row justify-around gap-8">
+          <Skeleton className="w-[25%] h-[428px] rounded-lg" />
+          <Skeleton className="flex-1 h-[428px]" />
+        </div>
+        <div className="flex gap-3">
+          <Skeleton className="w-16 h-6 rounded-full" />
+          <Skeleton className="w-16 h-6 rounded-full" />
+          <Skeleton className="w-16 h-6 rounded-full" />
+        </div>
+        <Skeleton className="w-full h-20" />
       </div>
     );
   }
@@ -101,15 +112,29 @@ export const MovieIntro = (props: MovieIntroProps) => {
         </div>
       </div>
       <div className="w-full flex flex-row justify-around gap-8">
-        <img
-          src={"https://image.tmdb.org/t/p/w500/" + intro?.poster_path}
-          className="object-center object-cover w-[25%] h-[428px]"
-        />
-        <div className="flex-1 h-[428px] relative">
+        {intro?.poster_path ? (
           <img
-            src={"https://image.tmdb.org/t/p/w500/" + intro?.poster_path}
-            className=" object-center object-cover w-full h-full "
+            src={"https://image.tmdb.org/t/p/w500/" + intro.poster_path}
+            className="object-center object-cover w-[25%] h-[428px] rounded-lg"
           />
+        ) : (
+          <div className="w-[25%] h-[428px] rounded-lg bg-muted flex flex-col items-center justify-center gap-2">
+            <Image className="w-10 h-10 text-muted-foreground" />
+            <span className="text-muted-foreground text-xs">No Image</span>
+          </div>
+        )}
+        <div className="flex-1 h-[428px] relative">
+          {intro?.poster_path ? (
+            <img
+              src={"https://image.tmdb.org/t/p/w500/" + intro.poster_path}
+              className="object-center object-cover w-full h-full"
+            />
+          ) : (
+            <div className="w-full h-full bg-muted flex flex-col items-center justify-center gap-2">
+              <Image className="w-10 h-10 text-muted-foreground" />
+              <span className="text-muted-foreground text-xs">No Image</span>
+            </div>
+          )}
           <div className="absolute top-[85%] left-[5%] ">
             <PopOverTrailer id={movieId} />
           </div>

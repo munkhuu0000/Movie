@@ -1,11 +1,12 @@
-"use cleint";
+"use client";
 
+import { Image } from "lucide-react";
 import Link from "next/link";
 import { FaStar } from "react-icons/fa";
 
 type card = {
   id: number;
-  poster_path: string;
+  poster_path: string | null;
   vote_average: number;
   title: string;
 };
@@ -24,8 +25,9 @@ export const Moviecard = (props: card) => {
             src={"https://image.tmdb.org/t/p/w500/" + props?.poster_path}
           />
         ) : (
-          <div className="w-full h-full rounded-t-lg bg-muted flex items-center justify-center">
-            <span className="text-muted-foreground text-sm">No Image</span>
+          <div className="w-full h-full rounded-t-lg bg-muted flex flex-col items-center justify-center gap-2">
+            <Image className="w-10 h-10 text-muted-foreground" />
+            <span className="text-muted-foreground text-xs">No Image</span>
           </div>
         )}
       </div>

@@ -39,23 +39,6 @@ export const MovieOverview = (props: MovieOverviewProps) => {
     GetData();
   }, []);
 
-  // if (loading) {
-  //   return (
-  //     <div className="w-screen px-20 gap-15">
-  //       <div className="flex flex-col gap-8">
-  //         <div className="w-100% h-9 flex justify-between items-center">
-  //           <Skeleton className="w-[250px] h-8 rounded-full"></Skeleton>
-  //           <Skeleton className="w-[250px] h-8 rounded-full"></Skeleton>
-  //         </div>
-  //         <div className="w-100% grid grid-rows-2 grid-cols-5 gap-8 justify-center ">
-  //           {[...Array(10)].map((_, i) => (
-  //             <Skeleton key={i} className="w-full aspect-2/3 rounded-t-lg" />
-  //           ))}
-  //         </div>
-  //       </div>
-  //     </div>
-  //   );
-  // }
   return (
     <div className="w-screen px-20 gap-15">
       <div className="flex flex-col gap-8">

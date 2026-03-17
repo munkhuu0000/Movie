@@ -25,8 +25,7 @@ export const Header = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       const res = await fetch(
-        `https://api.themoviedb.org/3/search/movie?query=${query}&language=en-US&page=1`,
-        // `${process.env.TMDB_BASE_URL}/search/movie?query=${query}&language=en-US&page=1`,
+        `${process.env.NEXT_PUBLIC_TMDB_BASE_URL}/search/movie?query=${query}&language=en-US&page=1`,
         {
           method: "GET",
           headers: {

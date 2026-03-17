@@ -2,12 +2,10 @@
 
 import { use, useEffect, useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
-import { FaArrowRightLong } from "react-icons/fa6";
 import { FaStar } from "react-icons/fa6";
 import Link from "next/link";
-import { categories } from "@/app/_constants";
 import { PaginationComponent } from "@/app/_components/Pagination";
-import { title } from "process";
+import { Image } from "lucide-react";
 
 type Movie = {
   adult: Boolean;
@@ -48,18 +46,19 @@ const Category = ({
     const GetData = async () => {
       setLoading(true);
       const res = await fetch(
-        `https://api.themoviedb.org/3/movie/${categoryName}?language=en-US&page=${currentPage}`,
+        `${process.env.NEXT_PUBLIC_TMDB_BASE_URL}/movie/${categoryName}?language=en-US&page=${currentPage}`,
         {
           method: "GET",
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlYWY2ZTY3OWMzNmQ3MzMxNGJkYWJiNmY0MzA2NjRjOCIsIm5iZiI6MTc2MzUyMjg0Mi43ODgsInN1YiI6IjY5MWQzOTFhN2QwOTFjNzQxMzU3Y2Y1NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.gsBHhf6bC6Y2ZqgPWinC5LgILDD4tqpuh6zO-CAwvIU",
+              `Bearer ${process.env.NEXT_PUBLIC_TMDB_API_TOKEN}`,
             accept: "application/json",
           },
         },
       );
 
       const data = (await res.json()) as Response;
+      console.log("datapage", data.results);
       setTotalPage(data?.total_pages);
       setMovies(data.results);
       setLoading(false);
@@ -75,7 +74,7 @@ const Category = ({
   const prevPage = () => {
     setCurrentPage((prev) => prev + 1);
   };
-  console.log("GG", currentPage);
+
 
   if (loading) {
     return (
@@ -115,10 +114,15 @@ const Category = ({
                 className="w-full bg-muted rounded-lg"
               >
                 <div className="w-full aspect-2/3 rounded-t-lg hover:bg-black hover:opacity-50 hover:duration-300 hover:ease-in-out z-2 ">
+                {movie.poster_path ? (
                   <img
-                    className="w-full h-full rounded-t-lg z-10 "
-                    src={"https://image.tmdb.org/t/p/w500/" + movie.poster_path}
+                  className="w-full h-full rounded-t-lg z-10 "
+                  src={"https://image.tmdb.org/t/p/w500/" + movie.poster_path}
                   />
+                ) : (<div className="w-full h-full rounded-t-lg bg-muted flex flex-col items-center justify-center gap-2">
+                  <Image className="w-10 h-10 text-muted-foreground" />
+      <span className="text-muted-foreground text-xs">No Image</span>
+    </div>)}
                 </div>
                 <div className="w-full h-[100px] px-3">
                   <div className="flex flex-row items-center gap-1">

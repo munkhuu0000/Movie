@@ -11,9 +11,7 @@ type card = {
   title: string;
 };
 
-
 export const Moviecard = (props: card) => {
-  
   return (
     <Link
       href={`/movie/${props?.id}`}
@@ -24,7 +22,7 @@ export const Moviecard = (props: card) => {
         {props?.poster_path ? (
           <img
             className="w-full h-full rounded-t-lg z-10"
-            src={"https://image.tmdb.org/t/p/w500/" + props?.poster_path}
+            src={`https://image.tmdb.org/t/p/original/${props?.poster_path}`}
           />
         ) : (
           <div className="w-full h-full rounded-t-lg bg-muted flex flex-col items-center justify-center gap-2">

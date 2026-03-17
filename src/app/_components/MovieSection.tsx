@@ -28,19 +28,19 @@ export const MovieSection = (props: MovieSectionProps) => {
     const GetData = async () => {
       setLoading(true);
       const res = await fetch(
-        `https://api.themoviedb.org/3/movie/${categoryName}?language=en-US&page=1`,
+        `${process.env.NEXT_PUBLIC_TMDB_BASE_URL}/movie/${categoryName}?language=en-US&page=1`,
         {
           method: "GET",
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlYWY2ZTY3OWMzNmQ3MzMxNGJkYWJiNmY0MzA2NjRjOCIsIm5iZiI6MTc2MzUyMjg0Mi43ODgsInN1YiI6IjY5MWQzOTFhN2QwOTFjNzQxMzU3Y2Y1NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.gsBHhf6bC6Y2ZqgPWinC5LgILDD4tqpuh6zO-CAwvIU",
+              `Bearer ${process.env.NEXT_PUBLIC_TMDB_API_TOKEN}`,
             accept: "application/json",
           },
         },
       );
 
       const data = (await res.json()) as Response;
-
+      console.log("data", data.results);
       setMovies(data.results);
       setLoading(false);
     };

@@ -87,7 +87,7 @@ export function CarouselPlugin() {
           {carousel?.slice(0, 5).map((item, index) => (
             <CarouselItem key={index} className="relative">
               <div className="w-screen flex flex-row justify-around items-center px-0">
-                <img
+                <img 
                   src={
                     "https://image.tmdb.org/t/p/original/" + item?.poster_path
                   }

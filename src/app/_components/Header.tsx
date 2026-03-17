@@ -94,7 +94,7 @@ export const Header = () => {
                     movies?.map((movie) => (
                       <MovieSearchCard
                         key={movie.id}
-                        image={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                        image={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : ""}
                         title={movie.title}
                         rate={movie.vote_average}
                         date={movie.release_date}

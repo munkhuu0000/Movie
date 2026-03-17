@@ -23,6 +23,7 @@ export const Moviecard = (props: card) => {
           <img
             className="w-full h-full rounded-t-lg z-10"
             src={`https://image.tmdb.org/t/p/original/${props?.poster_path}`}
+            alt="movie poster"
           />
         ) : (
           <div className="w-full h-full rounded-t-lg bg-muted flex flex-col items-center justify-center gap-2">

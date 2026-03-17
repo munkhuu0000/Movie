@@ -59,7 +59,7 @@ export function PopOverTrailer(props: popOver) {
     };
 
     GetData();
-  }, []);
+  }, [mTrailer]);
 
   return (
     <div className="w-screen h-full">

@@ -19,12 +19,12 @@ export const MovieOverview = (props: MovieOverviewProps) => {
     const GetData = async () => {
       setLoading(true);
       const res = await fetch(
-        `https://api.themoviedb.org/3/${movieId}?language=en-US`,
+        `${process.env.NEXT_PUBLIC_TMDB_BASE_URL}/movie/${movieId}?language=en-US`,
         {
           method: "GET",
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlYWY2ZTY3OWMzNmQ3MzMxNGJkYWJiNmY0MzA2NjRjOCIsIm5iZiI6MTc2MzUyMjg0Mi43ODgsInN1YiI6IjY5MWQzOTFhN2QwOTFjNzQxMzU3Y2Y1NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.gsBHhf6bC6Y2ZqgPWinC5LgILDD4tqpuh6zO-CAwvIU",
+              `Bearer ${process.env.NEXT_PUBLIC_TMDB_API_TOKEN}`,
             accept: "application/json",
           },
         },
@@ -37,7 +37,7 @@ export const MovieOverview = (props: MovieOverviewProps) => {
     };
 
     GetData();
-  }, []);
+  }, [movieId]);
 
   return (
     <div className="w-screen px-20 gap-15">
@@ -56,6 +56,7 @@ export const MovieOverview = (props: MovieOverviewProps) => {
                 <img
                   className="w-full h-full rounded-t-lg z-10 "
                   src={"https://image.tmdb.org/t/p/w500/" + movie.poster_path}
+                  alt="movie poster"
                 />
               </div>
               <div className="w-full h-[100px] px-3">

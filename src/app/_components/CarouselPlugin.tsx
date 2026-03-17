@@ -92,6 +92,7 @@ export function CarouselPlugin() {
                     "https://image.tmdb.org/t/p/original/" + item?.poster_path
                   }
                   className="w-screen h-[600px] object-center object-cover"
+                  alt="movie poster"
                 />
                 <div className="w-[404px] h-[350px] left-[140px] top-[180px] absolute flex flex-col gap-2">
                   <p className="text-base text-[#FFFFFF] font-normal font-family: var(--font-inter);">

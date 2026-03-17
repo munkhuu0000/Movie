@@ -73,6 +73,7 @@ export const Popular = () => {
                   <img
                     className="w-full h-[340px] rounded-t-lg z-10 "
                     src={"https://image.tmdb.org/t/p/w500/" + movie.poster_path}
+                    alt="movie poster"
                   />
                 </div>
                 <div className="w-full h-[100px] px-3">

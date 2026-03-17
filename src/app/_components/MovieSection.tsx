@@ -46,7 +46,7 @@ export const MovieSection = (props: MovieSectionProps) => {
     };
 
     GetData();
-  }, []);
+  }, [categoryName]);
 
   if (loading) {
     return (

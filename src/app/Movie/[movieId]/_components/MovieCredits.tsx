@@ -49,12 +49,12 @@ export const MovieCredits = (props: Castprops) => {
   useEffect(() => {
     const GetData = async () => {
       const res = await fetch(
-        `https://api.themoviedb.org/3/movie/${movieId}/credits?language=en-US`,
+        `${process.env.NEXT_PUBLIC_TMDB_BASE_URL}/movie/${movieId}/credits?language=en-US`,
         {
           method: "GET",
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlYWY2ZTY3OWMzNmQ3MzMxNGJkYWJiNmY0MzA2NjRjOCIsIm5iZiI6MTc2MzUyMjg0Mi43ODgsInN1YiI6IjY5MWQzOTFhN2QwOTFjNzQxMzU3Y2Y1NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.gsBHhf6bC6Y2ZqgPWinC5LgILDD4tqpuh6zO-CAwvIU",
+              `Bearer ${process.env.NEXT_PUBLIC_TMDB_API_TOKEN}`,
             accept: "application/json",
           },
         }
@@ -80,7 +80,7 @@ export const MovieCredits = (props: Castprops) => {
       // setMovieCast(data);
     };
     GetData();
-  }, []);
+  }, [movieId]);
   return (
     <div className="w-full flex flex-col gap-6">
       <div className="w-full h-[41px] flex gap-10 border-b-2 border-[#E4E4E7]">

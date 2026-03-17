@@ -15,7 +15,7 @@ export const MovieSearchCard = (props: MovieSearchCardProps) => {
   const { image, title, rate, date, id } = props;
   return (
     <div className="w-full h-full flex justify-between p-2 gap-4 border-b border-b-gray-300 ">
-      <img className="w-[67px] h-[100px] border rounded-md " src={image} />
+      <img className="w-[67px] h-[100px] border rounded-md " src={image} alt="movie poster" />
       <div className="flex flex-col justify-between items-center flex-1 h-full gap-3 ">
         <div className="w-full h-full flex flex-col">
           <h1 className="font-semibold text-xl"> {title}</h1>

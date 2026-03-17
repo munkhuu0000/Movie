@@ -31,7 +31,7 @@ export function SimilarMovies(props: movieId) {
       setSimilarMovies(data?.results);
     };
     Getdata();
-  }, []);
+  }, [id]);
 
   return (
     <div className="w-100% grid grid-rows-1 grid-cols-5 gap-8 justify-center ">

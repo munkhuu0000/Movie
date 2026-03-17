@@ -74,6 +74,7 @@ export const SecondSection = () => {
                 <img
                   className="w-full h-[340px] rounded-t-lg z-10 "
                   src={item.image}
+                  alt="movie poster"
                 />
               </div>
               <div className="w-full h-[100px] px-3">
